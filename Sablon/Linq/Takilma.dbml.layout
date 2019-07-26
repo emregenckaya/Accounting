@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Takilma">
+  <DataContextMoniker Name="/TakilmaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f6ae469b-8436-448d-ac51-dec6174c6dd8" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/TakilmaDataContext/tblPurchasing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25173142-6fbe-4510-ab24-7379293ed024" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fbbe917f-3a42-4c9d-9b99-ca270dda742a" absoluteBounds="3.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/TakilmaDataContext/tblSale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e8196cb-b0a7-4ba7-9387-05bcfcdd8619" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a547904-7cbe-4992-a14a-afdf3095c506" absoluteBounds="0.75, 4.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TakilmaDataContext/tblProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7275208c-bf7d-422e-927d-1e8117fc836d" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebc08571-8224-4bd6-aada-220e3c50bbdf" absoluteBounds="3.75, 4.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TakilmaDataContext/tblStock" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0566a995-3058-48ee-975f-6f70bbd8ad12" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

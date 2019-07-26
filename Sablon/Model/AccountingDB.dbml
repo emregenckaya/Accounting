@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Accounting" Class="AccountingDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Accounting;User ID=sa" SettingsObjectName="Accounting.Properties.Settings" SettingsPropertyName="AccountingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblCategory_tblProduct" Member="tblProducts" ThisKey="ID" OtherKey="CategoryID" Type="tblProduct" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStock" Member="tblStocks">
+    <Type Name="tblStock">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LotSerial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Association Name="tblProduct_tblStock" Member="tblProduct" ThisKey="ProductID" OtherKey="ID" Type="tblProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCity" Member="tblCities">
+    <Type Name="tblCity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Territory" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblCity_tblCompany" Member="tblCompanies" ThisKey="ID" OtherKey="CityID" Type="tblCompany" />
+      <Association Name="tblCity_tblSalesUp" Member="tblSalesUps" ThisKey="ID" OtherKey="CityID" Type="tblSalesUp" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCompany" Member="tblCompanies">
+    <Type Name="tblCompany">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(350)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TaxOffice" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TaxNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Authorized" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CusSup" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="tblCompany_tblPurchasing" Member="tblPurchasings" ThisKey="ID" OtherKey="CompanyID" Type="tblPurchasing" />
+      <Association Name="tblCompany_tblSalesUp" Member="tblSalesUps" ThisKey="ID" OtherKey="CompanyID" Type="tblSalesUp" />
+      <Association Name="tblCity_tblCompany" Member="tblCity" ThisKey="CityID" OtherKey="ID" Type="tblCity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmployee" Member="tblEmployees">
+    <Type Name="tblEmployee">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HireDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tblEmployee_tblPurchasing" Member="tblPurchasings" ThisKey="ID" OtherKey="EmployeeID" Type="tblPurchasing" />
+      <Association Name="tblEmployee_tblSalesUp" Member="tblSalesUps" ThisKey="ID" OtherKey="EmployeeID" Type="tblSalesUp" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProduct" Member="tblProducts">
+    <Type Name="tblProduct">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Association Name="tblProduct_tblStock" Member="tblStocks" ThisKey="ID" OtherKey="ProductID" Type="tblStock" />
+      <Association Name="tblProduct_tblPurchasing" Member="tblPurchasings" ThisKey="ID" OtherKey="ProductID" Type="tblPurchasing" />
+      <Association Name="tblProduct_tblSalesDown" Member="tblSalesDowns" ThisKey="ID" OtherKey="ProductID" Type="tblSalesDown" />
+      <Association Name="tblCategory_tblProduct" Member="tblCategory" ThisKey="CategoryID" OtherKey="ID" Type="tblCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPurchasing" Member="tblPurchasings">
+    <Type Name="tblPurchasing">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LotSerial" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PurchasingPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblCompany_tblPurchasing" Member="tblCompany" ThisKey="CompanyID" OtherKey="ID" Type="tblCompany" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblPurchasing" Member="tblEmployee" ThisKey="EmployeeID" OtherKey="ID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblProduct_tblPurchasing" Member="tblProduct" ThisKey="ProductID" OtherKey="ID" Type="tblProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSalesDown" Member="tblSalesDowns">
+    <Type Name="tblSalesDown">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SalesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LotSerial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SalesPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProduct_tblSalesDown" Member="tblProduct" ThisKey="ProductID" OtherKey="ID" Type="tblProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSalesUp" Member="tblSalesUps">
+    <Type Name="tblSalesUp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SalesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipperID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblCity_tblSalesUp" Member="tblCity" ThisKey="CityID" OtherKey="ID" Type="tblCity" IsForeignKey="true" />
+      <Association Name="tblCompany_tblSalesUp" Member="tblCompany" ThisKey="CompanyID" OtherKey="ID" Type="tblCompany" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblSalesUp" Member="tblEmployee" ThisKey="EmployeeID" OtherKey="ID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblShipper_tblSalesUp" Member="tblShipper" ThisKey="ShipperID" OtherKey="ID" Type="tblShipper" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblShippers" Member="tblShippers">
+    <Type Name="tblShipper">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tblShipper_tblSalesUp" Member="tblSalesUps" ThisKey="ID" OtherKey="ShipperID" Type="tblSalesUp" />
+    </Type>
+  </Table>
+</Database>

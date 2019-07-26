@@ -1,0 +1,15 @@
+C:\Users\section1\source\repos\Sablon\Sablon\bin\Debug\Sablon.exe.config
+C:\Users\section1\source\repos\Sablon\Sablon\bin\Debug\Sablon.exe
+C:\Users\section1\source\repos\Sablon\Sablon\bin\Debug\Sablon.pdb
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.csprojAssemblyReference.cache
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.Properties.Resources.resources
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.csproj.GenerateResource.cache
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.csproj.CoreCompileInputs.cache
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.exe
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.pdb
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.frmAnaSayfa.resources
+C:\Users\section1\source\repos\Sablon\Sablon\bin\Debug\Sablon.exe.manifest
+C:\Users\section1\source\repos\Sablon\Sablon\bin\Debug\Sablon.application
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.TrustInfo.xml
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.exe.manifest
+C:\Users\section1\source\repos\Sablon\Sablon\obj\Debug\Sablon.application
